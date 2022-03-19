@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Welcome Admin</title>
+    <link rel="stylesheet" href="/static/css/login.css">
+    <!-- <link href='https://unpkg.com/boxicons@2.0.8/css/boxicons.min.css' rel='stylesheet'> -->
+</head>
+<body>
+    <header>
+        <br>
+        <center>
+       <a href= "/"> <img src="/static/images/logo.jpeg" height="150px" border-radius="5px" ></a>
+    </center>
+    </header>
+    <form class="box" method="POST">
+    <h1>Admin Login</h1>
+    <input type="text" name="username" placeholder="USERNAME OR EMAIL" required>
+    <input type="password" name="password" placeholder="PASSWORD" required>
+    <input type="submit" name="login" value="Login">
+    {% if failed %}
+    <center><small style="color: red">Email or Password Incorrect</small></center>
+    {% endif %}    
+</form>
+<div class="img_btn">
+<a href="/"><img src="/static/images/home.png" width=150 ></div></a>
+<footer> &copy; projet fin d'études | Face Mask Detection | Noussair Abellouch & Himi Hiba </footer>
+
+</body>
+
+</html>

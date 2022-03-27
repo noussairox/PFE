@@ -1,0 +1,42 @@
+{% extends "base.html" %}
+
+{% block content %}
+<br>
+<center>
+    <div class="border border-5 w-50 text-center">
+            <h1 class="text-warning">CONTACTEZ-NOUS</h1>
+            <p class="lead my-4" >Avez nous des question?
+            N'hésitez  pas de nous contacter!</p>
+        </div>
+        <br>
+        <br>
+    </center>
+    <center>
+    <div class="shadow-lg p-3 mb-5  w-75 bg-body rounded" >
+        <form method="POST">
+            <div class="mb-3">
+                <label for="exampleFormControlTextareal1" class="form-label">Nom</label>
+                <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="your name" name="name">
+              </div>
+            <div class="mb-3">
+                <label for="exampleFormControlInput1" class="form-label">Email address</label>
+                <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="name@example.com" name="email">
+              </div>
+              <div class="mb-3">
+                <label for="exampleFormControlTextareal1" class="form-label">Num de Téléphone</label>
+                <input type="number" class="form-control" id="exampleFormControlInput1" placeholder="0X XX XX XX XX " name="phone">
+              </div>
+              <div class="mb-3">
+                <label for="exampleFormControlTextarea1" class="form-label">Message</label>
+                <textarea class="form-control" id="exampleFormControlTextarea1" rows="7" placeholder="Message" name="message"></textarea>
+              </div>
+              <div class="col-12">
+                <button class="btn btn-primary" type="submit">Envoyez</button>
+              </div>         
+        </form>
+        </div> 
+
+    </center>
+
+{% endblock content %}
+    

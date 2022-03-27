@@ -1,0 +1,121 @@
+{% extends 'base.html' %}
+{% block content %}
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  margin: 0;
+}
+
+html {
+  box-sizing: border-box;
+}
+
+*, *:before, *:after {
+  box-sizing: inherit;
+}
+
+.column {
+  float: center;
+  width: 33.3%;
+  margin-bottom: 16px;
+  padding: 0 8px;
+  text-align: center;
+  margin-left: 10%;
+}
+
+.card {
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  margin: 8px;
+}
+
+.about-section {
+  padding: 50px;
+  text-align: center;
+  background-color: #474e5d;
+  color: white;
+}
+
+.container {
+  padding: 0 16px;
+}
+
+
+
+.title {
+  color: grey;
+}
+
+.button {
+  border: none;
+  outline: 0;
+  display: inline-block;
+  padding: 8px;
+  color: white;
+  background-color: #000;
+  text-align: center;
+  cursor: pointer;
+  width: 100%;
+}
+
+img{
+    border-radius: 16px;
+}
+
+.button:hover {
+  background-color: #555;
+}
+
+@media screen and (max-width: 650px) {
+  .column {
+    width: 100%;
+    display: block;
+  }
+}
+</style>
+</head>
+<body>
+    <center>
+<div class="about-section">
+  <h1>A propos de nous</h1>
+  <p>Application de detection de mask facial</p>
+  <img src="/static/images/logo.jpeg" >
+  <br>
+  <p>Les entreprises et les organisations explorent de nouvelles façons de protéger la santé et d'assurer la sécurité des employés et des visiteurs. Le port d'un masque peut fournir la protection nécessaire contre la propagation du COVID-19, une précaution qui a été prise dans de nombreux lieux de travail et institutions pour reprendre les activités post-confinement, ce qui en fait davantage une source d'inquiétude et de stress. Les personnes qui ne respectent pas cette politique de sécurité professionnelle peuvent être détectées. Utilisez notre application Web qui aide avec les modèles de détection de masque. La solution utilise l'apprentissage en profondeur, plus précisément l'architecture CNN MobileNet v2, pour traiter les images d'entrée et tirer parti de ses hautes performances préformées. Nous évaluerons également un ensemble de données pour entraîner le modèle et le tester juste après son prétraitement</p>
+</div>
+
+<h2 style="text-align:center">Notre team!</h2>
+<div class="row">
+  <div class="column">
+    <div class="card">
+      <img src="/static/images/hiba.jpg" style="width:100%">
+      <div class="container">
+        <h2>Hiba Himi</h2>
+        <p class="title">Etudiant</p>
+        <p>Informatique décisionnelle et science de données</p>
+        <p>hiba.himi@gmail.com</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="column">
+    <div class="card">
+      <img src="/static/images/noussair.png"  style="width:100%">
+      <div class="container">
+        <h2>Abellouch Noussair</h2>
+        <p class="title">Etudiant</p>
+        <p>Informatique décisionnelle et science de données</p>
+        <p>abellouch34@gmail.com</p>
+      </div>
+    </div>
+  </div>
+
+</div>
+</center>
+</body>
+</html>
+
+{% endblock content %}

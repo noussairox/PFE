@@ -7,7 +7,7 @@ Original file is located at
     https://colab.research.google.com/drive/1RJ73TJ1yDWDlTZAHVPnJs3kyBMqNBu_P
 """
 
-from flask import Flask, render_template, Response , request ,session ,redirect
+from flask import Flask, render_template, Response , request ,session ,redirect,flash
 import cv2
 # import the necessary packages
 from tensorflow.keras.applications.mobilenet_v2 import preprocess_input
@@ -22,14 +22,23 @@ import os
 from flask_admin import Admin  # pip install flask-admin
 from flask_admin.contrib.sqla import ModelView
 from werkzeug.exceptions import abort
+from flask_mail import Mail, Message
 
 
 
 app = Flask(__name__)
 admin = Admin(app)
+mail = Mail(app)
+
 
 app.config['SECRET_KEY'] = 'mysecretkey'
-
+app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
+app.config['MAIL_SERVER'] = 'smtp.gmail.com'
+app.config['MAIL_PORT'] = 465
+app.config['MAIL_USERNAME'] = 'maslernono@gmail.com'
+app.config['MAIL_PASSWORD'] = 'maslernono-123'
+app.config['MAIL_USE_TLS'] = False
+app.config['MAIL_USE_SSL'] = True
 
 class SecureModelView(ModelView):
     def is_accessible(self):
@@ -139,7 +148,7 @@ def gen_frames():  # generate frame by frame from camera
            if not success:
                 break
            if success:
-            frame = imutils.resize(frame, width=400)
+            frame = imutils.resize(frame, width=1250)
             # detect faces in the frame and determine if they are wearing a
             # face mask or not
             (locs, preds) = detect_and_predict_mask(frame, faceNet, maskNet)
@@ -185,8 +194,12 @@ def video_feed():
 
 @app.route('/')
 def index():
-    """Video streaming home page."""
-    return render_template('index.html')
+    return render_template('home.html')
+
+@app.route("/contact", methods=["GET", "POST"])
+def contact():
+    return render_template('contact_us.html')
+
 
 
 
